@@ -5,7 +5,9 @@ import 'package:flutter/material.dart';
 import './products.dart';
 
 class productManager extends StatefulWidget {
-  const productManager({super.key});
+  // const productManager({super.key});
+  final String stringProduct;
+  const productManager(this.stringProduct, {super.key});
 
   @override
   State<StatefulWidget> createState() {
@@ -15,7 +17,14 @@ class productManager extends StatefulWidget {
 
 class _productManagerState extends State<productManager> {
   // ignore: prefer_final_fields
-  List<String> _products = ['Foodie'];
+  List<String> _products = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _products.add(widget.stringProduct);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -33,7 +42,7 @@ class _productManagerState extends State<productManager> {
           ),
         ),
         // Include Products widget in the widget tree
-        Products(_products), // Now this is reachable
+        Products(_products),
       ],
     );
   }
