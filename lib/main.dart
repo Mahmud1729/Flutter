@@ -1,17 +1,20 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
   @override
   State<StatefulWidget> createState() {
     return _MyappState();
   }
 }
 
-// const MyApp({super.key});
 class _MyappState extends State<MyApp> {
-  List<String> _products = ['Foodie'];
+  final List<String> _products = ['Foodie'];
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -22,7 +25,12 @@ class _MyappState extends State<MyApp> {
             Container(
               margin: EdgeInsets.all(10.0),
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  setState(() {
+                    _products.add('advance foodie');
+                    // print(_products);
+                  });
+                },
                 child: Text('Add Product'),
               ),
             ),
