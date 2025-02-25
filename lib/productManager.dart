@@ -21,8 +21,8 @@ class _productManagerState extends State<productManager> {
 
   @override
   void initState() {
-    super.initState();
     _products.add(widget.stringProduct);
+    super.initState();
   }
 
   @override
@@ -32,6 +32,7 @@ class _productManagerState extends State<productManager> {
         Container(
           margin: EdgeInsets.all(10.0),
           child: ElevatedButton(
+            // color: Theme.of(context).primaryColor,
             onPressed: () {
               setState(() {
                 _products.add('advance foodie');
