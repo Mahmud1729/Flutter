@@ -7,7 +7,8 @@ import './products.dart';
 class productManager extends StatefulWidget {
   // const productManager({super.key});
   final String stringProduct;
-  const productManager(this.stringProduct, {super.key});
+  // const productManager(this.stringProduct, {super.key});
+  productManager({this.stringProduct = "Sweet testter"});
 
   @override
   State<StatefulWidget> createState() {

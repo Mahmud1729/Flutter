@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(title: Text('Easy List')),
         backgroundColor: Colors.white30,
-        body: productManager('food lover'),
+        body: productManager(stringProduct: 'food tester'),
       ),
     );
   }
